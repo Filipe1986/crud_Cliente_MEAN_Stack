@@ -14,22 +14,22 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it('Deve criar o app', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Angular'`, () => {
+  it(`Deve ter o título como 'MeanStack'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Angular');
+    expect(app.title).toEqual('MeanStack');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('Deve renderizar o título em uma tag h1', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Angular!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to MeanStack!');
   });
 });
