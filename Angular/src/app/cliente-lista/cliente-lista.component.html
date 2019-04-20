@@ -1,0 +1,29 @@
+<div class=col-md-11>
+    <h3>{{errorMsg}}</h3>
+    <table class="table table-bordered table-condensed table-hover">
+        <thead>
+            <tr>
+                <td>Name<input  type="text"  onkeyup=""></td>
+                <th>sobrenome</th>
+                <th>nascimento</th>
+                <th>cpf</th>
+                <th>telefone</th>
+            </tr>
+        </thead>
+        <tbody id="form-list-client-body">
+            <tr *ngFor="let cliente of clientes">
+                <td>{{cliente.nome}}</td>
+                <td>{{cliente.sobrenome}}</td>
+                <td>{{cliente.nascimento}}</td>
+                <td>{{cliente.cpf}}</td>
+                <td>{{cliente.telefone}}</td>
+                <td>
+                    <a title="edit this user" class="btn btn-default btn-sm"> <i
+                            class="glyphicon glyphicon-edit text-primary"></i> </a>
+                    <a title="delete this user" class="btn btn-default btn-sm "> <i
+                            class="glyphicon glyphicon-trash text-danger"></i> </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

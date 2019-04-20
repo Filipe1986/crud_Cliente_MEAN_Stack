@@ -1,11 +1,9 @@
-export class Cliente {
 
-    constructor(
-        public nome: string,
-        public sobrenome: string,
-        public nascimento: string,
-        public cpf: string,
-        public telefone?: string,
-        public id?: number
-      ) {  }
+export interface ICliente {
+   nome: string,
+   sobrenome: string,
+   nascimento: string,
+   cpf: string,
+   telefone?: string,
+   _id?: number
 }

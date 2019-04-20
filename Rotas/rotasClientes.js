@@ -1,12 +1,18 @@
 const rotaCliente = require('express').Router();
 const Cliente = require('../Modelos/Cliente');
-
+var cors = require('cors');
+rotaCliente.use(cors());
 
 rotaCliente.get('/clientes', function (req, res) {
-    console.log(JSON.stringify(req.body));
+    //console.log(JSON.stringify(req.body));
     Cliente.find({}).exec(function (err, result) {
-        if (err) throw err;
-        res.json({ Cliente: result });
+        if (err){
+            res.json( err );
+
+        }else{
+        //console.log(JSON.stringify(result))
+        res.json( result );
+    }
     });
 });
 
