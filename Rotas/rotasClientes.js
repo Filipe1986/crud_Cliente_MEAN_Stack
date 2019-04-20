@@ -5,13 +5,13 @@ rotaCliente.use(cors());
 
 rotaCliente.get('/clientes', function (req, res) {
     //console.log(JSON.stringify(req.body));
-    Cliente.find({}).exec(function (err, result) {
+    Cliente.find({}).exec(function (err, clientes) {
         if (err){
             res.json( err );
-
         }else{
         //console.log(JSON.stringify(result))
-        res.json( result );
+        res.json( clientes);
+        
     }
     });
 });
@@ -25,7 +25,6 @@ rotaCliente.get('/cliente', function (req, res) {
 });
 
 rotaCliente.route('/novocliente').post(function (req, res) {
-    console.log("Entrou");
     console.log(JSON.stringify(req.body));
     Cliente.find({ "cpf": req.body.cpf }).lean().exec(function (err, cliente) {
         console.log(cliente);
@@ -38,7 +37,7 @@ rotaCliente.route('/novocliente').post(function (req, res) {
             var cliente = new Cliente();
             cliente.nome = req.body.nome;
             cliente.sobrenome = req.body.sobrenome;
-            cliente.dataDeNascimento = req.body.dataDeNascimento;
+            cliente.nascimento = req.body.nascimento;
             cliente.cpf = req.body.cpf;
             cliente.telefone = req.body.telefone;
 
@@ -81,7 +80,7 @@ rotaCliente.post('/atualizacliente', function (req, res) {
         $set: {
             nome: req.body.nome,
             sobrenome: req.body.sobrenome,
-            dataDeNascimento: req.body.dataDeNascimento,
+            nascimento: req.body.nascimento,
             cpf: req.body.cpf,
             telefone: req.body.telefone
         }

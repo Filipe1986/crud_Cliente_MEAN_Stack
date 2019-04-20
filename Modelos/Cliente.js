@@ -8,7 +8,7 @@ var ClienteSchema = new mongoose.Schema(
         ObjectId:  ObjectIdSchema,
         nome :{ type: String, required: true },
         sobrenome: { type: String, required: false},
-        dataDeNascimento: {type: String, required: true },
+        nascimento: {type: String, required: true },
         cpf :{type: String, required :true ,   unique: true },
         telefone: {type: String, default: true }
         
