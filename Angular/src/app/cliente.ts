@@ -5,5 +5,5 @@ export interface ICliente {
    nascimento: string,
    cpf: string,
    telefone?: string,
-   _id?: number
+   _id?: string
 }
