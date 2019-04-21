@@ -57,11 +57,11 @@ rotaCliente.route('/novocliente').post(function (req, res) {
 });
 
 rotaCliente.delete('/deletarcliente', function (req, res) {
-    //console.log(JSON.stringify(req.body));
+    console.log(JSON.stringify(req.body));
     var busca = req.body.cpf;
 
     Cliente.deleteOne({ "cpf": busca }).exec(function (err, cliente) {
-        console.log(cliente.n)
+        
         if (err) {
             res.status(500).json({ err });
         } else if (cliente.n > 0) {

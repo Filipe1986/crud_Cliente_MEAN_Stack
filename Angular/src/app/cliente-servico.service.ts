@@ -3,12 +3,6 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable } from 'rxjs';
 import { ICliente } from './cliente';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
-  })
-};
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +19,18 @@ export class ClienteServico {
 
   novoCliente(cliente) {
     return this.http.post<any>(this._url +'/novocliente', cliente);
+  }
+  deletarCliente(cpf) {
+    console.log(cpf);
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: {
+        "cpf": cpf
+      },
+    };
+    return this.http.delete(this._url +'/deletarcliente',  options);
   }
 
 

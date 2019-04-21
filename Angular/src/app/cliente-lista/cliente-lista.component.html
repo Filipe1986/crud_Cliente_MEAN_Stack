@@ -18,10 +18,10 @@
                 <td>{{cliente.cpf}}</td>
                 <td>{{cliente.telefone}}</td>
                 <td>
-                    <a title="edit this user" class="btn btn-default btn-sm"> <i
-                            class="glyphicon glyphicon-edit text-primary"></i> </a>
-                    <a title="delete this user" class="btn btn-default btn-sm "> <i
-                            class="glyphicon glyphicon-trash text-danger"></i> </a>
+                    <button title="edite esse cliente" class="btn btn-default btn-sm" > <i
+                            class="glyphicon glyphicon-edit text-primary"></i> </button>
+                    <button  title="delete esse cliente" class="btn btn-default btn-sm " (click)="onDelete(cliente.cpf)" > <i
+                            class="glyphicon glyphicon-trash text-danger"></i> </button>
                 </td>
             </tr>
         </tbody>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, FormArray, Validators, FormBuilder } from '@angular/forms';
+import { FormGroup,  Validators, FormBuilder } from '@angular/forms';
 import { ClienteServico } from '../cliente-servico.service';
 
 @Component({
@@ -23,18 +23,14 @@ export class ClienteFormularioComponent implements OnInit {
       subscribe: [false],
     });
 
-    this.clientenFormulario.get('subscribe').valueChanges
-      .subscribe(checkedValue => {
-
-      });
 
   }
   onSubmit() {
     console.log(this.clientenFormulario.value);
     this._clienteServico.novoCliente(this.clientenFormulario.value)
       .subscribe(
-        response => console.log('Success!', response),
-        error => console.error('Error!', error)
+        response => console.log('Sucesso!', response),
+        error => console.error('Erro!', error)
       );
   }
 }
