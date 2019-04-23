@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ClienteFormularioComponent } from './cliente-formulario/cliente-formulario.component';
 import { ClienteListaComponent } from './cliente-lista/cliente-lista.component';
 import { ClienteServico } from './cliente-servico.service';
+import {MatDialogModule, MatDialog} from '@angular/material/dialog';
+//import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Injeção de dependência de directive ou component na declarations
 @NgModule({
@@ -19,11 +21,17 @@ import { ClienteServico } from './cliente-servico.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
+    
   ],
   providers: [
-    ClienteServico
+    ClienteServico,
+    MatDialogModule,
+    MatDialog
   ],
-  bootstrap: [AppComponent, ClienteFormularioComponent, ClienteListaComponent  ]
+  bootstrap: [AppComponent, ClienteFormularioComponent, ClienteListaComponent ],
+  entryComponents: [ClienteFormularioComponent]
+
 })
 export class AppModule { }

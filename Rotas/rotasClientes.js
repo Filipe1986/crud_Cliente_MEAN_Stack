@@ -75,18 +75,26 @@ rotaCliente.delete('/deletarcliente', function (req, res) {
 
 rotaCliente.post('/atualizacliente', function (req, res) {
     console.log(JSON.stringify(req.body));
-    var id = req.body._id;
-    Cliente.findByIdAndUpdate(id, {
-        $set: {
+    var cpf = req.body.cpf;
+    Cliente.findOneAndUpdate(cpf, {
             nome: req.body.nome,
             sobrenome: req.body.sobrenome,
             nascimento: req.body.nascimento,
             cpf: req.body.cpf,
             telefone: req.body.telefone
+    }, function (err, cliente) {
+        if (err) {
+        
+            console.log(err);
+            res.send(err);
+        }else {
+            //console.log(cliente);
+            res.send("cliente atualizado");
+
         }
-    }, { new: true }, function (err, cliente) {
-        if (err) return err;
-        res.send("cliente atualizado");
+        
+
+
     });
 
 });

@@ -21,7 +21,7 @@ export class ClienteServico {
     return this.http.post<any>(this._url +'/novocliente', cliente);
   }
   deletarCliente(cpf) {
-    console.log(cpf);
+
     const options = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -32,6 +32,20 @@ export class ClienteServico {
     };
     return this.http.delete(this._url +'/deletarcliente',  options);
   }
+  
+  atualizaCliente(cliente) {
+    console.log(cliente)
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: {
+        cliente
+      },
+    };
+    return this.http.post(this._url +'/atualizacliente',  cliente);
+  }
+
 
 
   errorHandler(error: HttpErrorResponse){

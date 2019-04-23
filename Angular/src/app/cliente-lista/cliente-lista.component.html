@@ -1,24 +1,29 @@
-<div class=col-md-11>
+<div class=col-md-9>
+    <h1>Lista de clientes</h1>
     <h3>{{errorMsg}}</h3>
+    <div class="form-group col-md-2">
+            <input class="form-control rounded-0 py-2" type="search" value="Busca" id="example-search-input">
+          </div>
     <table class="table table-bordered table-condensed table-hover">
         <thead>
+
             <tr>
-                <td>Nome<input  type="text"  onkeyup=""></td>
-                <th>sobrenome</th>
-                <th>nascimento</th>
-                <th>cpf</th>
-                <th>telefone</th>
+                <td>Nome</td>
+                <th>Sobrenome</th>
+                <th>Data de Nascimento</th>
+                <th>CPF</th>
+                <th>Telefone</th>
             </tr>
         </thead>
         <tbody id="form-list-client-body">
             <tr *ngFor="let cliente of clientes">
-                <td>{{cliente.nome}}</td>
-                <td>{{cliente.sobrenome}}</td>
-                <td>{{cliente.nascimento}}</td>
-                <td>{{cliente.cpf}}</td>
-                <td>{{cliente.telefone}}</td>
+                <td >{{cliente.nome}} </td>
+                <td >{{cliente.sobrenome}}</td>
+                <td >{{cliente.nascimento}}</td>
+                <td >{{cliente.cpf}}</td>
+                <td >{{cliente.telefone}}</td>
                 <td>
-                    <button title="edite esse cliente" class="btn btn-default btn-sm" > <i
+                    <button title="edite esse cliente" class="btn btn-default btn-sm" (click)="onEdit(cliente)" > <i
                             class="glyphicon glyphicon-edit text-primary"></i> </button>
                     <button  title="delete esse cliente" class="btn btn-default btn-sm " (click)="onDelete(cliente.cpf)" > <i
                             class="glyphicon glyphicon-trash text-danger"></i> </button>

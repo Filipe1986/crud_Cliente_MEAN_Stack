@@ -1,4 +1,4 @@
-<div class="container" style="text-align:left"  class="col-xs-5">
+<div class="container" style="text-align:left"  class="col-xs-2">
   <h1>Novo Cliente</h1>
   <form  [formGroup]="clientenFormulario" (ngSubmit)="onSubmit()"> 
     <div class="form-group">
@@ -10,8 +10,8 @@
       <input type="text" class="form-control" formControlName="sobrenome">
     </div>
     <div class="form-group">
-      <label for="nascimento">Data de nascimento</label>
-      <input type="text" class="form-control" formControlName="nascimento">
+      <label  for="nascimento">Data de nascimento</label>
+      <input type="datetime-local"  class="form-control" formControlName="nascimento">
     </div>
 
     <div class="form-group">
